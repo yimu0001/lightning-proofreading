@@ -1,0 +1,45 @@
+{
+  "name": "lightning-proofreading",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name lightning-proofreading --dest lib src/components/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "iview": "^3.5.4",
+    "jquery": "^3.5.1",
+    "js-cookie": "^2.2.1",
+    "view-design": "^4.3.2",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.4.0",
+    "@vue/cli-service": "^4.4.0",
+    "babel-plugin-import": "^1.13.0",
+    "less": "^2.7.3",
+    "less-loader": "^5.0.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "lib/lightning-proofreading.common.js",
+  "repository": {
+    "type": "git",
+    "url": "yimu0001"
+  },
+  "author": "yimu",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  }
+}
