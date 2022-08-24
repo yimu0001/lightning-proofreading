@@ -2,8 +2,8 @@
  * @Author: 易木
  * @Date: 2022-07-05 09:40:29
  * @LastEditors: 易木
- * @LastEditTime: 2022-08-23 17:05:34
- * @FilePath: \copy1111\src\components\proofreading-result.vue
+ * @LastEditTime: 2022-08-24 10:45:30
+ * @FilePath: \lightning-proofreading\src\components\proofreading-result.vue
  * @Description: 校对的弹窗
  * 
  * Copyright (c) 2022 by 用户/公司名, All Rights Reserved. 
@@ -206,7 +206,7 @@
 
 <script>
 import ProofreadResultTipContentModal from "./proofread-result-tip-content-modal.vue";
-import { Tabs, TabPane, Row, Col } from "view-design";
+import { Tabs, TabPane, Row, Col, Dropdown, Button } from "view-design";
 export default {
   name: "ProofreadResultList",
   components: {
@@ -215,6 +215,8 @@ export default {
     TabPane,
     Row,
     Col,
+    Dropdown,
+    Button,
   },
   props: {
     result: {

@@ -1,54 +1,29 @@
 /*
  * @Author: your name
  * @Date: 2020-05-11 10:44:46
- * @LastEditTime: 2020-11-30 15:58:04
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-08-23 17:44:43
+ * @LastEditors: 易木
  * @Description: In User Settings Edit
- * @FilePath: \files\api\data.js
+ * @FilePath: \lightning-proofreading\src\api\data.js
  */
-import axios from '@/libs/api.request'
+import axios from "@/libs/api.request";
 
-//获取文件下项目
-export const getFileList = (baseUrl, type, path_id, num, page, highCodeRateStandardLimit) => {
-  let args = {
-    num,
-    page,
-    highCodeRateStandardLimit
-  }
+///文字审校
+export const proofreadingText = (brand_type, article, async, video) => {
   return axios.request({
-    url: baseUrl+'folder/'+path_id+'/'+type+'-files',
-    method: 'get',
-    params: args
-  })
-}
+    url: "/text-revise/check-article",
+    method: "post",
+    data: { article, brand_type, async, video },
+    params: { brand_type },
+  });
+};
 
-//根据父类文件夹id获取文件夹
-export const getFolders = (baseUrl, type, path_id) => {
+//根据id异步获取文字校验结果
+export const asyncProofreadingRes = (brand_type, pid) => {
   return axios.request({
-    url: baseUrl+'folder/'+path_id+'/'+type+'-folders',
-    method: 'get',
-  })
-}
-
-
-//其他模块文件入库
-export const saveFileToStore = (baseUrl, type, url, from, red_soft_process, filename) => {
-  return axios.request({
-    url: baseUrl+'file/'+type,
-    method: 'post',
-    data:{
-      url: url,
-      from: from,
-      red_soft_process,
-      filename
-    }
-  })
-}
-
-//检查当前机构是否开启转码
-export const checkIsTranscode = (baseUrl) => {
-  return axios.request({
-    url: baseUrl+'transcode/switch-check',
-    method: 'get',
-  })
-}
+    url: "/text-revise/get-async-result",
+    method: "post",
+    data: { pid },
+    params: { brand_type },
+  });
+};

@@ -1,14 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-23 09:48:43
- * @LastEditTime: 2020-07-23 10:28:57
- * @LastEditors: your name
+ * @LastEditTime: 2022-08-24 09:50:53
+ * @LastEditors: 易木
  * @Description: In User Settings Edit
- * @FilePath: \sucai-modal\src\App.vue
---> 
+ * @FilePath: \lightning-proofreading\src\App.vue
+-->
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -17,8 +17,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
 #nav {

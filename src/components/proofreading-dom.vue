@@ -15,6 +15,8 @@
 <script>
 import ProofreadingResult from "./proofreading-result.vue";
 import { proofreadingText, asyncProofreadingRes } from "@/api/data";
+import "view-design/dist/styles/iview.css";
+import { Message } from "view-design";
 export default {
   name: "ProofreadingDom",
   components: {
@@ -36,10 +38,10 @@ export default {
     handleTextProofreading(type, msg) {
       this.textProofreadingType = type;
       if (msg == "") {
-        this.$Message.error("无内容，请先填写");
+        Message.error("无内容，请先填写");
         return;
       }
-      this.proofreadLoading = this.$Message.loading({
+      this.proofreadLoading = Message.loading({
         content: "文字校验中请稍后...",
         duration: 0,
       });
@@ -53,7 +55,7 @@ export default {
               this.getAsyncProofreadingResult(type);
             }, 1000);
           } else {
-            this.$Message.error(res.data.message);
+            Message.error(res.data.message);
             this.proofreadLoading();
           }
         })
@@ -94,7 +96,7 @@ export default {
               this.$emit("proofreadEnd");
             }
           } else {
-            this.$Message.error(res.data.message);
+            Message.error(res.data.message);
             this.proofreadLoading();
             clearInterval(this.asyncProofreadingResInterval);
             this.asyncProofreadingResId = undefined;
@@ -135,6 +137,13 @@ export default {
         word += item;
       });
       this.$refs.yimuUeditor.msg = word;
+    },
+    //替换错误信息
+    handleReplaceErrorWord(item) {
+      this.$emit("handleReplaceErrorWord", item);
+    },
+    handleIgnoreErrorWord(item) {
+      this.$emit("handleReplaceErrorWord", item);
     },
   },
 };
